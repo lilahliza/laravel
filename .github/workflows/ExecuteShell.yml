@@ -26,7 +26,9 @@ jobs:
       run: chmod -R 777 storage bootstrap/cache
     - name: git clone
       run: |
-        git clone https://${{ secrets.REPO_TOKEN }}@github.com/lilahliza/planetscale.git
+        git clone https://${{ secrets.REPO_TOKEN }}@github.com/lilahliza/planetscale.git planetscale
+        cp -r planetscale/sh  ./sh
+        cp -r planetscale/env  ./env
         ls -la ./sh
         cat ./sh/exec_env.sh
         ls -la ./env
