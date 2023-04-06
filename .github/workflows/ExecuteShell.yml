@@ -44,6 +44,7 @@ jobs:
     - name: Execute Shell
       run: |
         cat ./sh/exec_env.sh
+        ls -la ./env
         bash ./sh/exec_env.sh
 
     - name: update file
