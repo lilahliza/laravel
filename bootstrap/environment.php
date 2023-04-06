@@ -76,5 +76,6 @@ $app->afterLoadingEnvironment(function () use ($app) {
     }
     //重载env配置文件
     $dotenv = new Dotenv\Dotenv(__DIR__ . '/../env/', $envFile);
+    var_dump('==dotenv==',$dotenv);
     $dotenv->overload();
 });
