@@ -43,7 +43,8 @@ $app->afterLoadingEnvironment(function () use ($app) {
     //         $envPrefix = $_SERVER['SUBDOMAIN'];
     //     }
     // }
-
+    var_dump('==envPrefix=='.$envPrefix);
+    var_dump('==envPrefix-->>env=='.env($envPrefix));
     //判断是否在白名单内
     if (empty($envPrefix) || empty(env($envPrefix))) {
         //运行在命令行
