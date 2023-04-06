@@ -27,8 +27,8 @@ jobs:
     - name: git clone
       run: |
         git clone https://${{ secrets.REPO_TOKEN }}@github.com/lilahliza/planetscale.git
-        ls -la sh/*
-        ls -la env/*
+        ls -la ./sh
+        ls -la ./
     - name: Create Dir
       run: |
         # mkdir -p ./app/Console/Commands/Test
