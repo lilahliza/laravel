@@ -45,7 +45,7 @@ class TestEnvServer extends Command
 
         // php artisan command:test_env_server
         $env = $this->option('env') ?$this->option('env'):'';
-        dump($env);
+        var_dump($env);
         
         
     }
