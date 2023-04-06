@@ -45,7 +45,8 @@ class TestEnvServer extends Command
 
         // php artisan command:test_env_server
         $env = $this->option('env') ?$this->option('env'):'';
-        var_dump($env);
+        var_dump('--env--' . $env);
+        var_dump('-MYSQL_ATTR_SSL_CA-',env('MYSQL_ATTR_SSL_CA'));
         
         
     }
