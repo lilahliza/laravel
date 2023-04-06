@@ -18,7 +18,7 @@ jobs:
     - name: install laravel provec
       run: |
         echo ""
-        composer create-project  laravel/laravel blog "10.6.1"
+        composer create-project  laravel/laravel blog "10.*"
         # composer create-project --prefer-dist laravel/laravel blog "10.*"
         # laravel/laravel：包名，表示创建一个laravel项目
         # blog：项目目录
@@ -69,10 +69,10 @@ jobs:
     #     DB_DATABASE: database/database.sqlite
     #     MYSQL_ATTR_SSL_CA: /etc/ssl/certs/ca-certificates.crt
     #   run: vendor/bin/phpunit
-    # - name: version
-    #   run: |
-    #     php artisan --version
-    #     php --version
+    - name: version
+      run: |
+        php artisan --version
+        php --version
     # - name: view file
     #   run: |
     #     cat .env
@@ -93,6 +93,6 @@ jobs:
         # git add monthly.log
         git add ./
         # git commit -m "Monthly update"
-        git commit -m "init laravel 10.6.1"
+        # git commit -m "init laravel 10.6.1"
         git log
-        git push origin
+        # git push origin
