@@ -18,7 +18,7 @@ jobs:
     - name: install laravel provec
       run: |
         echo ""
-        # composer create-project  laravel/laravel blog "10.6.1"
+        composer create-project  laravel/laravel blog "10.6.1"
         # composer create-project --prefer-dist laravel/laravel blog "10.*"
         # laravel/laravel：包名，表示创建一个laravel项目
         # blog：项目目录
