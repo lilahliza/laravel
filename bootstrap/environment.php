@@ -31,6 +31,9 @@ if (app()->runningInConsole()) {
     }
 }
 
+var_dump('==envPrefix=='.$envPrefix);
+var_dump('==envPrefix-->>env=='.env($envPrefix));
+
 //判断是否在白名单内
 if (empty($envPrefix) || empty(env($envPrefix))) {
     //运行在命令行
@@ -50,8 +53,7 @@ $envForme = '.' . $envPrefix . '.env';
 //判断文件是否存在
 $envPath = __DIR__ . '/../env';
 $envPathName = $envPath . '/' . $envForme;
-var_dump('==envPrefix=='.$envPrefix);
-var_dump('==envPrefix-->>env=='.env($envPrefix));
+
 var_dump('==envPathName==' . $envPathName);
 if (file_exists($envPathName)) {
 
