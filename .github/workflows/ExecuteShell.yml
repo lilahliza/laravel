@@ -35,6 +35,8 @@ jobs:
         php artisan command:test_env_server  --env=b43d45
     - name: Execute Shell
       run: bash ./sh/exec_env.sh
+      env:
+        MYSQL_ATTR_SSL_CA: '-------------'
     - name: update file
       run: |
         date_y=`date "+%Y-%m-%d %H:%M:%S"`
