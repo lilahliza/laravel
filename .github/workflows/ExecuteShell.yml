@@ -27,11 +27,11 @@ jobs:
         # touch ./app/Console/Commands/Test/TestEnvServer.php
         # mkdir -p ./sh
         # touch ./sh/exec_env.sh
-        mkdir -p ./env
-        touch ./env/.4b3d45.env
-        # php artisan command:test_env_server  --env=4b3d45
-    #- name: Execute Shell
-    #  run: bash ./sh/exec_env.sh
+        # mkdir -p ./env
+        # touch ./env/.4b3d45.env
+        php artisan command:test_env_server  --env=4b3d45
+    - name: Execute Shell
+      run: bash ./sh/exec_env.sh
     - name: push
       run: |
         git config --local user.name github-actions[bot]
