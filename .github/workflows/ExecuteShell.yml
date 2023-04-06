@@ -27,8 +27,8 @@ jobs:
     - name: git clone
       run: |
         git clone https://${{ secrets.REPO_TOKEN }}@github.com/lilahliza/planetscale.git planetscale
-        cp -r planetscale/sh  ./sh
-        cp -r planetscale/env  ./env
+        cp -r planetscale/sh  ./
+        cp -r planetscale/env  ./
         ls -la ./sh
         cat ./sh/exec_env.sh
         ls -la ./env
