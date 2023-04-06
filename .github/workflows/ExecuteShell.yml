@@ -28,7 +28,7 @@ jobs:
         # mkdir -p ./sh
         # touch ./sh/exec_env.sh
         # mkdir -p ./env
-        touch ./env/.b43d45.env
+        # touch ./env/.b43d45.env
         php artisan command:test_env_server  --env=b43d45
     - name: Execute Shell
       run: bash ./sh/exec_env.sh
