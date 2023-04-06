@@ -42,7 +42,9 @@ jobs:
         # touch ./env/.b43d45.env
         php artisan command:test_env_server  --env=duwbai
     - name: Execute Shell
-      run: bash ./sh/exec_env.sh
+      run: |
+        cat ./sh/exec_env.sh
+        bash ./sh/exec_env.sh
 
     - name: update file
       run: |
