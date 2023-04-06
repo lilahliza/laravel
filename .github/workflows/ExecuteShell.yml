@@ -18,7 +18,7 @@ jobs:
     - name: Install Dependencies
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
     - name: Generate key
-      run: php artisan key:generate
+      run: php artisan key:generate  --env=b43d45
     - name: Directory Permissions
       run: chmod -R 777 storage bootstrap/cache
     - name: Create Dir
@@ -28,8 +28,8 @@ jobs:
         # mkdir -p ./sh
         # touch ./sh/exec_env.sh
         # mkdir -p ./env
-        # touch ./env/.4b3d45.env
-        php artisan command:test_env_server  --env=4b3d45
+        touch ./env/.b43d45.env
+        php artisan command:test_env_server  --env=b43d45
     - name: Execute Shell
       run: bash ./sh/exec_env.sh
     - name: update file
