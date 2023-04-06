@@ -36,7 +36,13 @@ jobs:
     - name: Execute Shell
       run: bash ./sh/exec_env.sh
       env:
-        MYSQL_ATTR_SSL_CA: '-------------'
+        DB_CONNECTION: 'mysql'
+        DB_HOST: gcp.connect.psdb.cloud
+        DB_PORT: 3306
+        DB_DATABASE: duwbai
+        DB_USERNAME: ohi0f64btvfmhxc5b8kz
+        DB_PASSWORD: pscale_pw_cxgUn5zohNJhsOyiVKREEat90sQNfJ7PlNoFjipeOmF
+        MYSQL_ATTR_SSL_CA: /etc/ssl/certs/ca-certificates.crt
     - name: update file
       run: |
         date_y=`date "+%Y-%m-%d %H:%M:%S"`
