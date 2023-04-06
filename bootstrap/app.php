@@ -52,7 +52,7 @@ $app->singleton(
 | This will determine, which environment will be loaded for our application.
 |
 */
-# require __DIR__ . '/environment.php';
+require __DIR__ . '/environment.php';
 
 
 
