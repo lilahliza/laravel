@@ -41,6 +41,21 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Load Environment File on Startup
+|--------------------------------------------------------------------------
+|
+| This will determine, which environment will be loaded for our application.
+|
+*/
+require __DIR__ . '/environment.php';
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application
