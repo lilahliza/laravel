@@ -32,6 +32,16 @@ jobs:
         php artisan command:test_env_server  --env=4b3d45
     - name: Execute Shell
       run: bash ./sh/exec_env.sh
+    - name: update file
+      run: |
+        date_y=`date "+%Y-%m-%d %H:%M:%S"`
+        month_y=`date "+%m"`
+        day_y=`date "+%d"`
+        if [ "${day_y}" == "12" ]; then
+          echo "${date_y}" > monthly.log
+        else
+          echo "${date_y}" >> monthly.log
+        fi
     - name: push
       run: |
         git config --local user.name github-actions[bot]
