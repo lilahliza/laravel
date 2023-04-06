@@ -34,19 +34,19 @@ if (app()->runningInConsole()) {
 var_dump('==envPrefix=='.$envPrefix);
 var_dump('==envPrefix-->>env=='.env($envPrefix));
 
-//判断是否在白名单内
-if (empty($envPrefix) || empty(env($envPrefix))) {
-    //运行在命令行
-    if (app()->runningInConsole()) {
-        die('[error] no environment');
-    } else {
-        $e = '{
-            "code": "0",
-            "msg": "请求不在白名单内"
-        }';
-        die($e);
-    }
-}
+// //判断是否在白名单内
+// if (empty($envPrefix) || empty(env($envPrefix))) {
+//     //运行在命令行
+//     if (app()->runningInConsole()) {
+//         die('[error] no environment');
+//     } else {
+//         $e = '{
+//             "code": "0",
+//             "msg": "请求不在白名单内"
+//         }';
+//         die($e);
+//     }
+// }
 
 
 $envForme = '.' . $envPrefix . '.env';
