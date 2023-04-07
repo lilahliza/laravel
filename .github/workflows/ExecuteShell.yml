@@ -42,12 +42,12 @@ jobs:
         # touch ./sh/exec_env.sh
         # mkdir -p ./env
         # touch ./env/.b43d45.env
-        # php artisan command:test_env_server  --env=duwbai
+        php artisan command:test_env_server  --env=duwbai
         ls -la ./env
     - name: Execute Shell
       run: |
         cat ./sh/exec_env.sh
-        bash ./sh/exec_env.sh
+        # bash ./sh/exec_env.sh
         # php artisan command:test_env_server  --env=b43d45
         # php artisan command:test_env_server  --env=4b3d45
 
