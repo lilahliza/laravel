@@ -14,6 +14,11 @@ return new class extends Migration
         Schema::create('activity_logs', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            
+            $table->tinyInteger('sale_level')->nullable($value = false)->default(0)->comment('标志');
+            
+            $table->comment = '存活日志表';
+            
         });
     }
 
