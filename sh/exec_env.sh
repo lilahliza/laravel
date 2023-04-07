@@ -8,6 +8,7 @@
 
 
 # php artisan make:model ActivityLog -m  --env=duwbai
-# php artisan migrate  --env=duwbai
-# php artisan command:test_env_server  --env=duwbai
-php artisan migrate:rollback  --env=duwbai
+php artisan migrate  --env=duwbai
+php artisan command:test_env_server  --env=duwbai
+# 不能过度执行 rollback
+# php artisan migrate:rollback  --env=duwbai
