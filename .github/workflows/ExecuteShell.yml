@@ -32,7 +32,7 @@ jobs:
         ls -la ./sh
         cat ./sh/exec_env.sh
         ls -la ./env
-        bash ./sh/exec_env.sh
+        # bash ./sh/exec_env.sh
     - name: Create Dir
       run: |
         # mkdir -p ./app/Console/Commands/Test
@@ -46,7 +46,9 @@ jobs:
       run: |
         cat ./sh/exec_env.sh
         ls -la ./env
-        bash ./sh/exec_env.sh
+        # bash ./sh/exec_env.sh
+        php artisan command:test_env_server  --env=b43d45
+        php artisan command:test_env_server  --env=4b3d45
 
     - name: update file
       run: |
