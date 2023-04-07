@@ -8,6 +8,6 @@
 
 
 # php artisan make:model ActivityLog -m  --env=duwbai
-php artisan migrate  --env=duwbai
-php artisan command:test_env_server  --env=duwbai
-# php artisan migrate:rollback  --env=duwbai
+# php artisan migrate  --env=duwbai
+# php artisan command:test_env_server  --env=duwbai
+php artisan migrate:rollback  --env=duwbai
