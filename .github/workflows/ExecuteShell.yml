@@ -60,12 +60,19 @@ jobs:
         else
           echo "${date_y}" >> monthly.log
         fi
+    - name: git log
+      run: |
+        git log
+    - name: git status
+      run: |
+        git status
+    - name: git diff
+      run: |
+        git diff ./
     - name: push
       run: |
         git config --local user.name github-actions[bot]
         git config --local user.email github-actions[bot]@users.noreply.github.com
-        git status
         git add ./monthly.log
         git commit -m "update"
-        git log
         git push origin
