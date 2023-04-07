@@ -7,7 +7,7 @@ use Illuminate\Console\Command;
 # use Illuminate\Support\Str;
 # use Illuminate\Support\Facades\Cache;
 # use Illuminate\Support\Facades\Redis;
-
+use App\Models\ActivityLog;
 
 class TestEnvServer extends Command
 {
@@ -47,7 +47,15 @@ class TestEnvServer extends Command
         $env = $this->option('env') ?$this->option('env'):'';
         var_dump('--env--' . $env);
         var_dump('-MYSQL_ATTR_SSL_CA-',env('MYSQL_ATTR_SSL_CA'));
-        
+        $count = ActivityLog::count();
+        if($count >= 12){
+            // 清空数据
+            ActivityLog::truncate();
+        }
+        // 添加数据
+        $obj = new ActivityLog();
+        $obj->sale_level = 1;
+        $obj->save();
         
     }
     
