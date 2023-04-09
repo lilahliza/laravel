@@ -31,7 +31,7 @@ if (app()->runningInConsole()) {
     }
 }
 $envPrefix = trim($envPrefix);
-var_dump('==envPrefix=='.$envPrefix);
+// var_dump('==envPrefix=='.$envPrefix);
 // var_dump('==envPrefix-->>env=='.env($envPrefix));
 
 // //判断是否在白名单内
@@ -54,8 +54,8 @@ $envForme = '.' . $envPrefix . '.env';
 $envPath = __DIR__ . '/../env';
 $envPathName = $envPath . '/' . $envForme;
 
-var_dump('==envPathName==' . realpath($envPathName));
-var_dump('-scandir-',scandir($envPath) );
+// var_dump('==envPathName==' . realpath($envPathName));
+// var_dump('-scandir-',scandir($envPath) );
 if (file_exists($envPathName)) {
 
 } else {
