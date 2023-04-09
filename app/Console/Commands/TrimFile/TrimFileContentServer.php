@@ -48,7 +48,8 @@ class TrimFileContentServer extends Command
         echo "--file--" . $file . PHP_EOL;
         $rowData = $this->readFileRows($file);
         foreach($rowData as $line=>$v){
-            echo $line . '====>>>>>>>' . $v . PHP_EOL;
+            var_dump( $line . '====>>>>>>>' . $v);
+            echo '-手动换行-' . PHP_EOL;
         }
         
     }
