@@ -35,11 +35,13 @@ jobs:
         cp -r planetscale/sh  ./
         cp -r planetscale/env  ./
         ls -la ./sh
-        sed 's/\r$//' ./sh/exec_env.sh
+        sed 's/\r//' ./sh/exec_env.sh
         sed 's/[\r]*$//'  ./sh/exec_env.sh
         cat ./sh/exec_env.sh > ./sh/exec_env_bak.sh
         # 删除尾行的 \r
-        sed 's/\r$//' ./sh/exec_env_bak.sh
+        sed "s/\r//"./sh/exec_env_bak.sh
+        # sed "s/\r$//"
+        # sed "s/\r//"
         sed 's/[\r]*$//'  ./sh/exec_env_bak.sh
         ls -la ./env
     - name: Create Dir
