@@ -51,6 +51,7 @@ jobs:
         chmod +x ./sh/exec_env.sh
         ./sh/exec_env.sh
         # https://stackoverflow.com/questions/65609835/run-a-bash-script-located-in-public-folder-github-actions
+        # https://www.youtube.com/watch?v=rlfZEtBqF8c
         # php artisan command:test_env_server  --env=b43d45
         # php artisan command:test_env_server  --env=4b3d45
         # php artisan command:test_env_server  --env=oregon_db
