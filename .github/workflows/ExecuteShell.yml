@@ -35,7 +35,7 @@ jobs:
         cp -r planetscale/sh  ./
         cp -r planetscale/env  ./
         ls -la ./sh
-        cat ./sh/exec_env.sh > ./sh/exec_env.sh
+        cat ./sh/exec_env.sh > ./sh/exec_env_bak.sh
         ls -la ./env
     - name: Create Dir
       run: |
@@ -50,6 +50,7 @@ jobs:
     - name: cat sh
       run: |
         cat ./sh/exec_env.sh
+        cat ./sh/exec_env_bak.sh
         pwd
     - name: Run script file Shell
       #shell: bash
@@ -58,10 +59,10 @@ jobs:
         # apt install -y dos2unix
         # dos2unix --version
         # /home/runner/work/laravel/laravel/bootstrap/../env/.duwbai.env
-        chmod +x ./sh/exec_env.sh
+        chmod +x ./sh/exec_env_bak.sh
         # dos2unix ./sh/exec_env.sh
         # https://www.shellscript.sh/examples/dos2unix/
-        bash ./sh/exec_env.sh
+        bash ./sh/exec_env_bak.sh
         # https://stackoverflow.com/questions/65609835/run-a-bash-script-located-in-public-folder-github-actions
         # https://www.youtube.com/watch?v=rlfZEtBqF8c
         # php artisan command:test_env_server  --env=b43d45
