@@ -47,11 +47,13 @@ jobs:
         # touch ./env/.b43d45.env
         # php artisan command:test_env_server  --env=duwbai
         ls -la ./env
-    - name: Run script file Shell
-      #shell: bash
+    - name: cat sh
       run: |
         cat ./sh/exec_env.sh
         pwd
+    - name: Run script file Shell
+      #shell: bash
+      run: |
         # apt update
         # apt install -y dos2unix
         # dos2unix --version
