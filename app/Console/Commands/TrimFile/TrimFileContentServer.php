@@ -67,7 +67,7 @@ class TrimFileContentServer extends Command
         foreach($rowData as $line=>$v){
             var_dump( $line . '====>>>>>>>' . $v);
             echo '-手动换行-' . PHP_EOL;
-            file_put_contents($filePath, $v,FILE_APPEND);
+            file_put_contents($file_tmp_path, $v,FILE_APPEND);
         }
         unlink($file);
         rename($file_tmp_path,$file);
