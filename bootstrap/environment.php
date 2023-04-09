@@ -31,7 +31,7 @@ if (app()->runningInConsole()) {
     }
 }
 
-// var_dump('==envPrefix=='.$envPrefix);
+var_dump('==envPrefix=='.$envPrefix);
 // var_dump('==envPrefix-->>env=='.env($envPrefix));
 
 // //判断是否在白名单内
@@ -54,7 +54,8 @@ $envForme = '.' . $envPrefix . '.env';
 $envPath = __DIR__ . '/../env';
 $envPathName = $envPath . '/' . $envForme;
 
-// var_dump('==envPathName==' . $envPathName);
+var_dump('==envPathName==' . realpath($envPathName));
+var_dump('-scandir-',scandir($envPathName));
 if (file_exists($envPathName)) {
 
 } else {
