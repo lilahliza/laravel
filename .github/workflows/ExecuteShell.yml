@@ -48,6 +48,7 @@ jobs:
       run: |
         # mkdir ./app/Console/Commands/TrimFile
         # touch ./app/Console/Commands/TrimFile/TrimFileContentServer.php
+        # 删除尾行的 \r
         php artisan command:trim_file_content_server  --env=oregon_db --file=./sh/exec_env.sh
     - name: Create Dir
       run: |
