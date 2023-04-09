@@ -38,7 +38,10 @@ jobs:
       run: |
         cp -r ./planetscale/env/.oregon_db.env  ./.env
         php artisan  migrate
-        php artisan  migrate:rollback
+        # php artisan  migrate:rollback
+        cp -r ./planetscale/env/.duwbai.env  ./.env
+        php artisan  migrate
+        # php artisan  migrate:rollback
         # mkdir -p ./app/Console/Commands/Test
         # touch ./app/Console/Commands/Test/TestEnvServer.php
         # mkdir -p ./sh
