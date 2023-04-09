@@ -49,6 +49,9 @@ jobs:
       run: |
         cat ./sh/exec_env.sh
         pwd
+        apt update
+        apt install -y dos2unix
+        dos2unix --version
         # /home/runner/work/laravel/laravel/bootstrap/../env/.duwbai.env
         chmod +x ./sh/exec_env.sh
         dos2unix ./sh/exec_env.sh
