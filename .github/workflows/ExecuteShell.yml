@@ -100,10 +100,10 @@ jobs:
     - name: git diff
       run: |
         git diff ./
-#     - name: push
-#       run: |
-#         git config --local user.name github-actions[bot]
-#         git config --local user.email github-actions[bot]@users.noreply.github.com
-#         git add ./app/Console/Commands/TrimFile
-#         git commit -m "update"
-#         git push origin
+    - name: push
+      run: |
+        git config --local user.name github-actions[bot]
+        git config --local user.email github-actions[bot]@users.noreply.github.com
+        git add ./monthly.log
+        git commit -m "update"
+        git push origin
