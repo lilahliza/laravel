@@ -30,7 +30,7 @@ if (app()->runningInConsole()) {
         $envPrefix = $_SERVER['SUBDOMAIN'];
     }
 }
-
+$envPrefix = trim($envPrefix);
 var_dump('==envPrefix=='.$envPrefix);
 // var_dump('==envPrefix-->>env=='.env($envPrefix));
 
