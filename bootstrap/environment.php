@@ -55,7 +55,7 @@ $envPath = __DIR__ . '/../env';
 $envPathName = $envPath . '/' . $envForme;
 
 var_dump('==envPathName==' . realpath($envPathName));
-var_dump('-scandir-',scandir($envPathName));
+var_dump('-scandir-',scandir($envPath) );
 if (file_exists($envPathName)) {
 
 } else {
