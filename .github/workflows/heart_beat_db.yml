@@ -1,4 +1,4 @@
-name: ExecuteShell
+name: heart_beat_db
 
 on:
   #schedule:
