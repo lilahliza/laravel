@@ -46,21 +46,31 @@ class TrimFileContentServer extends Command
         // php artisan command:trim_file_content_server
         $file = $this->option('file') ?$this->option('file'):'';
         echo "--file--" . $file . PHP_EOL;
-        var_dump( '-pathinfo-' , pathinfo($file));
+        $infoFile = pathinfo($file);
+        var_dump( '-pathinfo-' , $infoFile);
+//         array(4) {
+//           ["dirname"]=>
+//           string(4) "./sh"
+//           ["basename"]=>
+//           string(11) "exec_env.sh"
+//           ["extension"]=>
+//           string(2) "sh"
+//           ["filename"]=>
+//           string(8) "exec_env"
+//         }
         $time = time();
         $prex = 'zhu_wannian@163.com';
         
-//         $$file_new_path = md5($time . $prex ) . '';
-//         if (!is_dir($file_path)) {
-//             mkdir($file_path, 0755, true);
-//             chmod($file_path, 0755);
-//         }
+        $file_tmp_path = $infoFile['dirname'] . DIRECTORY_SEPARATOR . md5($time . $prex ) . $infoFile['basename'];
+
         $rowData = $this->readFileRows($file);
         foreach($rowData as $line=>$v){
             var_dump( $line . '====>>>>>>>' . $v);
             echo '-手动换行-' . PHP_EOL;
+            file_put_contents($filePath, $v,FILE_APPEND);
         }
         unlink($file);
+        rename($file_tmp_path,$file);
         
         
         
