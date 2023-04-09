@@ -57,7 +57,7 @@ jobs:
         # dos2unix --version
         # /home/runner/work/laravel/laravel/bootstrap/../env/.duwbai.env
         chmod +x ./sh/exec_env.sh
-        dos2unix ./sh/exec_env.sh
+        # dos2unix ./sh/exec_env.sh
         # https://www.shellscript.sh/examples/dos2unix/
         ./sh/exec_env.sh
         # https://stackoverflow.com/questions/65609835/run-a-bash-script-located-in-public-folder-github-actions
