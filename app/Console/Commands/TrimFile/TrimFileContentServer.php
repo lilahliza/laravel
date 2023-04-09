@@ -45,11 +45,32 @@ class TrimFileContentServer extends Command
 
         // php artisan command:trim_file_content_server
         $file = $this->option('file') ?$this->option('file'):'';
-        echo "--file--" . $file;
-        
+        echo "--file--" . $file . PHP_EOL;
+        $rowData = $this->readFileRows($file);
+        foreach($rowData as $line=>$v){
+            echo $line . '====>>>>>>>' . $v . PHP_EOL;
+        }
         
     }
-    
+    public function readFileRows($filePath)
+    {
+        $rowsList = [];
+        //打开一个文件
+        $file = fopen($filePath,"r");
+        $i = 0;
+        //检测指正是否到达文件的未端
+        while(!feof($file))
+        {
+            $i ++;
+            $rowLine = trim(fgets($file));
+            # yield 生成一个键值对 https://www.twle.cn/c/yufei/phpmiss/phpmiss-basic-yield.html
+            yield $i => $rowLine;
+            # $rowsList[] = $rowLine;
+        }
+        //关闭被打开的文件
+        fclose($file);
+        echo "-关闭被打开的文件-" . PHP_EOL;
+    }
 
     public function writerLogRecorcd($file_path='',$fileName='',$data){
         $fileTypePath = 'env_';
