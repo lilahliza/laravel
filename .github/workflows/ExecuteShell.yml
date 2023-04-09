@@ -48,6 +48,7 @@ jobs:
       shell: bash
       run: |
         cat ./sh/exec_env.sh
+        chmod +x ./sh/exec_env.sh
         ./sh/exec_env.sh
         # https://stackoverflow.com/questions/65609835/run-a-bash-script-located-in-public-folder-github-actions
         # php artisan command:test_env_server  --env=b43d45
