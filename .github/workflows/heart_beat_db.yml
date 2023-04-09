@@ -30,13 +30,13 @@ jobs:
       run: |
         git clone https://${{ secrets.REPO_TOKEN }}@github.com/lilahliza/planetscale.git planetscale
         # cp -r planetscale/sh  ./
-        cp -r planetscale/env  ./
+        #cp -r planetscale/env  ./
         #ls -la ./sh
         #cat ./sh/exec_env.sh
         #ls -la ./env
     - name: Create Dir
       run: |
-        cp -r ./.oregon_db.env  ./.env
+        cp -r ./planetscale/env/.oregon_db.env  ./.env
         php artisan  migrate
         php artisan  migrate:rollback
         # mkdir -p ./app/Console/Commands/Test
