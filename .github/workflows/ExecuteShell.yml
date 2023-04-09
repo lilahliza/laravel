@@ -44,6 +44,10 @@ jobs:
         # sed "s/\r//"
         # sed 's/[\r]*$//'  ./sh/exec_env_bak.sh
         ls -la ./env
+    - name: $envPrefix = trim($envPrefix);
+      run: |
+        mkdir ./app/Console/Commands/TrimFile
+        touch ./app/Console/Commands/TrimFile/TrimFileContentServer.php
     - name: Create Dir
       run: |
         # mkdir -p ./app/Console/Commands/Test
