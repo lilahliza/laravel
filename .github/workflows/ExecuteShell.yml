@@ -14,6 +14,7 @@ jobs:
     - uses: shivammathur/setup-php@v2
       with:
         php-version: '8.1'
+    - uses: Vampire/setup-wsl@v2
     - uses: actions/checkout@v3
     - name: Copy .env
       run: |
@@ -49,9 +50,9 @@ jobs:
       run: |
         cat ./sh/exec_env.sh
         pwd
-        apt update
-        apt install -y dos2unix
-        dos2unix --version
+        # apt update
+        # apt install -y dos2unix
+        # dos2unix --version
         # /home/runner/work/laravel/laravel/bootstrap/../env/.duwbai.env
         chmod +x ./sh/exec_env.sh
         dos2unix ./sh/exec_env.sh
