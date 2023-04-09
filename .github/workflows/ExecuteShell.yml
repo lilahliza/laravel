@@ -35,7 +35,7 @@ jobs:
         cp -r planetscale/sh  ./
         cp -r planetscale/env  ./
         ls -la ./sh
-        cat ./sh/exec_env.sh
+        cat ./sh/exec_env.sh > ./sh/exec_env.sh
         ls -la ./env
     - name: Create Dir
       run: |
