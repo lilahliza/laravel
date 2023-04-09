@@ -42,12 +42,12 @@ class TrimFileContentServer extends Command
      */
     public function handle()
     {
-
-        // php artisan command:trim_file_content_server
+        // 删除尾行的 \r
+        // php artisan command:trim_file_content_server  --env=oregon_db --file=./sh/exec_env.sh
         $file = $this->option('file') ?$this->option('file'):'';
         echo "--file--" . $file . PHP_EOL;
         $infoFile = pathinfo($file);
-        var_dump( '-pathinfo-' , $infoFile);
+//         var_dump( '-pathinfo-' , $infoFile);
 //         array(4) {
 //           ["dirname"]=>
 //           string(4) "./sh"
@@ -60,17 +60,21 @@ class TrimFileContentServer extends Command
 //         }
         $time = time();
         $prex = 'zhu_wannian@163.com';
-        
+//         保存为临时文件
         $file_tmp_path = $infoFile['dirname'] . DIRECTORY_SEPARATOR . md5($time . $prex ) . $infoFile['basename'];
 
         $rowData = $this->readFileRows($file);
         foreach($rowData as $line=>$v){
             var_dump( $line . '====>>>>>>>' . $v);
             echo '-手动换行-' . PHP_EOL;
+//             保存为临时文件
             file_put_contents($file_tmp_path, $v . PHP_EOL,FILE_APPEND);
         }
+//         删除源文件
         unlink($file);
+//         把临时文件重命名为源文件
         rename($file_tmp_path,$file);
+
         
         
         
